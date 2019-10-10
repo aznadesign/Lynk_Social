@@ -11,6 +11,7 @@ git clone  addurlhere
 cd lynk_social
 cp .env.example .env
 composer install
+php artisan key:generate
 ```
 
 * set up mysql DB and add db name/username/password in .env
