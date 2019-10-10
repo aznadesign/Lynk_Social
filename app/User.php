@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Ballen\Gravel\Gravatar;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -54,5 +55,9 @@ class User extends Authenticatable
             $avatar->setSize(200);
             return $avatar->buildGravatarUrl();
         }
+    }
+
+    public function posts() : HasMany {
+        return $this->hasMany(Post::class);
     }
 }

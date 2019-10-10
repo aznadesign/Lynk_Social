@@ -17,7 +17,17 @@ class ProfileController extends Controller
      */
     public function show()
     {
-        return view('profile', ['profile' => \auth()->user()]);
+        return view('profile.show', ['profile' => \auth()->user()->with('posts')->first()]);
+    }
+
+    /**
+     * Display user profile.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function edit()
+    {
+        return view('profile.edit', ['profile' => \auth()->user()->with('posts')->first()]);
     }
 
     /**

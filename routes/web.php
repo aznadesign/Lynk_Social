@@ -18,6 +18,7 @@ Route::get('/feed', 'HomeController@index')->name('feed');
 
 Route::group(['prefix' => 'profile', 'middleware' => ['auth','verified']], function(){
     Route::get('/', 'ProfileController@show')->name('profile');
+    Route::get('/edit', 'ProfileController@edit')->name('profile.edit');
     Route::post('/update', 'ProfileController@update')->name('profile.update');
     Route::get('/destroy', 'ProfileController@destroy')->name('profile.destroy');
 });

@@ -55,7 +55,7 @@
                         </span>
                         @enderror
                     </div>
-                    <div class="form-group text-center col-2 float-right">
+                    <div class="form-group text-center col-4 float-right">
                         <button type="submit" class="btn btn-home btn-block">
                             {{ __('Update') }}
                         </button>
