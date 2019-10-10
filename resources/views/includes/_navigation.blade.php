@@ -16,16 +16,16 @@
         @else
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link mt-2 text-dark" href="/profile">hello {{ Auth::user()->username }}</a>
+                <a class="nav-link mt-2 text-dark" href="{{route('profile')}}">hello {{ Auth::user()->username }}</a>
 
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="{{ Auth::user()->avatar }}" class="img-fluid center-block rounded-circle" style="height:40px;width:40px;">
+                    <img src="{{\auth()->user()->avatar}}" class="img-fluid center-block rounded-circle" style="height:40px;width:40px;">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Settings</a>
-                    <a class="dropdown-item" href="/profile">My profile</a>
+                    <a class="dropdown-item" href="{{route('profile')}}">My profile</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/logout">Log out Lynk</a>
                 </div>

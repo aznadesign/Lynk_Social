@@ -13,8 +13,14 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 Route::get('/feed', 'HomeController@index')->name('feed');
+
+Route::group(['prefix' => 'profile', 'middleware' => ['auth','verified']], function(){
+    Route::get('/', 'ProfileController@show')->name('profile');
+    Route::post('/update', 'ProfileController@update')->name('profile.update');
+    Route::get('/destroy', 'ProfileController@destroy')->name('profile.destroy');
+});
 
 Auth::routes();
 Auth::routes(['verify' => true]);

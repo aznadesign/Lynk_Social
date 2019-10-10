@@ -50,7 +50,7 @@
                 </form>
             </div>
             <div class="card-footer mx-auto" style="background-color:white;">
-                <small>Not yet <a href="/">signed up?</a></small>
+                <small>Not yet <a href="{{route('register')}}">signed up?</a></small>
             </div>
         </div>
     </div>
